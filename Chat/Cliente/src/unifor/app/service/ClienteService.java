@@ -34,7 +34,7 @@ public class ClienteService {
     
     public void send(ChatMessage message) {
         try {
-            System.out.println("::: Chave Publica" + this.criptografa.getChavePublica() + " :::");
+            System.out.println("::: Chave Publica : " + this.criptografa.getChavePublica() + " :::");
             output.writeObject(message);
         } catch (IOException ex) {
             Logger.getLogger(ClienteService.class.getName()).log(Level.SEVERE, null, ex);

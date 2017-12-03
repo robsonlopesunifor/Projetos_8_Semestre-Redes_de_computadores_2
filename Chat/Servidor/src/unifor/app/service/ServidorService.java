@@ -92,6 +92,7 @@ public class ServidorService {
     }
 
     private boolean connect(ChatMessage message, ObjectOutputStream output) {
+        /*
         if (mapOnlines.size() == 0) {
             message.setText("YES");
             send(message, output);
@@ -107,6 +108,8 @@ public class ServidorService {
             send(message, output);
             return true;
         }
+*/
+        return true;
     }
     
 

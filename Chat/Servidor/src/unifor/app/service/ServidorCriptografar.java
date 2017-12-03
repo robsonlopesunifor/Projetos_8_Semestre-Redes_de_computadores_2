@@ -4,23 +4,22 @@
  * and open the template in the editor.
  */
 package unifor.app.service;
-import unifor.app.bean.ChatMessage;
+
 /**
  *
  * @author robson
  */
-public class ClienteCriptografia {
-
+public class ServidorCriptografar {
+    
     private String chavePublica;
     private String chavePrivada;
-    private String chaveDES;
+    private String chavesDES;
     private String chavePublicaDoServidor;
     
-    public ClienteCriptografia()
+    public ServidorCriptografar()
     {
         this.chavePublica = "chavePublica";
         this.chavePrivada = "chavePrivada";
-        this.chaveDES = "chaveDES";
         this.chavePublicaDoServidor = "chavePublicaDoServidor";
     }
     
@@ -28,11 +27,16 @@ public class ClienteCriptografia {
         return this.chavePublica;
     }
     
-    public void setChavePublicaDoServidor(String chavePublicaDoServidor){
+    public void obtendoDESDescriptografandoComChavePrivada(String DESCriptografado){
+        this.chavePublica = chavePublicaDoServidor;
+        this.chavesDES = "chave des do robson";
+    }
+    
+    public void setChavePublicaDoCliente(String chavePublicaDoServidor){
         this.chavePublica = chavePublicaDoServidor;
     }
     
-    public ChatMessage criptografarChatMessege(ChatMessage menssagem){
+    public String criptografarTextoComDES(String menssagem){
         return menssagem;
     }
     

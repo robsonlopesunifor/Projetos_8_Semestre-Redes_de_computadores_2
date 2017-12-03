@@ -74,8 +74,10 @@ public class ClienteFrame extends javax.swing.JFrame {
             this.txtName.setText("");
             JOptionPane.showMessageDialog(this, "Conexão não realizada!\nTente novamente com um novo nome.");
             return;
+        }else if(message.getText().equals("YES")) {
+            JOptionPane.showMessageDialog(this, "chave publica aaa");
         }
-
+        
         this.message = message;
         nomeUsuario.setFont(new Font("Courier", Font.BOLD + Font.BOLD, 30));;
         nomeUsuario.setText(message.getName());
@@ -376,6 +378,8 @@ public class ClienteFrame extends javax.swing.JFrame {
             this.message = new ChatMessage();
             this.message.setAction(Action.CONNECT);
             this.message.setName(name);
+            this.message.setNameReserved(name);
+            this.message.setText("Texto da chave publica");
 
             this.service = new ClienteService();
             this.socket = this.service.connect();
