@@ -11,10 +11,13 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import unifor.app.service.ClienteCriptografia;
+
 public class ClienteService {
     
     private Socket socket;
     private ObjectOutputStream output;
+    private ClienteCriptografia criptografa = new ClienteCriptografia();
     
     public Socket connect() {
         try {
@@ -31,6 +34,7 @@ public class ClienteService {
     
     public void send(ChatMessage message) {
         try {
+            System.out.println("::: Chave Publica" + this.criptografa.getChavePublica() + " :::");
             output.writeObject(message);
         } catch (IOException ex) {
             Logger.getLogger(ClienteService.class.getName()).log(Level.SEVERE, null, ex);
